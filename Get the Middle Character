@@ -1,0 +1,42 @@
+
+
+// You are going to be given a non-empty string. Your job is to return the middle character(s) of the string.
+
+//    If the string's length is odd, return the middle character.
+//    If the string's length is even, return the middle 2 characters.
+
+// Examples:
+
+// "test" --> "es"
+// "testing" --> "t"
+// "middle" --> "dd"
+// "A" --> "A"
+
+// Fundamentals
+// Strings
+
+// Suggest kata description edits
+
+
+
+package kata
+
+import (
+  "strings"
+)
+
+func GetMiddle(s string) string {
+  var s1 []string
+  var chet bool
+  i := len(s)/2
+  if len(s)%2 == 0 { chet = true }
+
+  for ind, _  := range s {
+  if chet && ind == i-1 || ind == i {
+   s1 = append(s1, string(s[ind]))
+  }
+
+  }
+  result := strings.Join(s1, "")
+  return result
+}
